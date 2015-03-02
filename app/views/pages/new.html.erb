@@ -1,0 +1,35 @@
+<h1>New Page</h1>
+
+<%= form_for(:page, url:{action: 'create'}) do |f| %>
+  
+  <p>
+    <%= f.label :subject_id, 'Subject' %><br>
+    <%= f.select(:subject_id, @subjects.map{|s| [s.name, s.id]}, :prompt => "Выберете тему ...") %>
+  </p>
+
+  <p>
+    <%= f.label :name, 'Name of page' %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :permalink, 'Permalink' %><br>
+    <%= f.text_field :permalink %>
+  </p>
+
+  <p>
+    <%= f.label :position, 'Position' %><br>
+    <%= f.text_field :position %>
+  </p>
+
+  <p>
+    <%= f.label :visible, 'Visible' %><br>
+    <%= f.text_field :visible %>
+  </p>
+ 
+  <p>
+    <%= f.submit 'Сохранить страницу' %>
+  </p>
+<% end %>
+
+<%= debug(params)%>
