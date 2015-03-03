@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  
+
+  # get 'access/login'
+
   # get 'pages/index'
 
   # get 'pages/show'
@@ -43,6 +47,8 @@ Rails.application.routes.draw do
 
   root 'demo#index'
   #get 'demo/index'
+
+  get 'admin', to: "access#index"
 
   match ':controller(/:action(/:id))', :via => [:get, :post]
 
